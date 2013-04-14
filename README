@@ -1,0 +1,10 @@
+Installation:
+    sudo pip install daytime
+
+Description:
+
+This module extends the datetime.time-module and makes it more handy
+respectivly to comparison, addition and substraction.
+You can compare, add and substract a daytime-object with other daytime-objects
+or with an integer as the amount of seconds. You can also compare a daytime-
+with a datetime.time-object.

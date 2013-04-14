@@ -10,7 +10,7 @@ setup(
     url = "https://github.com/thomst/daytime",
     download_url = "https://pypi.python.org/packages/source/t/daytime/daytime-{version}.tar.gz".format(version=VERSION),
     description = 'has to be written...',
-    long_description = "has to be written as well...",
+    long_description = "This module extends the datetime.time-module and makes it more handy respectivly to comparison, addition and substraction. You can compare, add and substract a daytime-object with other daytime-objects or with an integer as the amount of seconds. You can also compare a daytime- with a datetime.time-object.",
     py_modules = ["daytime"],
     classifiers=[
         'Development Status :: 4 - Beta',

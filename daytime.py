@@ -8,11 +8,11 @@ class DayTime(datetime.time):
     Compare, add or substract daytimes.
     
     This module extends the datetime.time-module and makes it more handy
-    respectivly to comparison, addition and substraction. Comparison as well as
-    doing sums are possible with either a DayTime-instance or an integer or
-    float as seconds (The outcome is always a DayTime-instance). Comparison also
-    works with datetime.time-instances.
-    
+    respectivly to comparison, addition and substraction.
+    You can compare, add and substract a daytime-object with other daytime-objects
+    or with an integer as the amount of seconds. You can also compare a daytime-
+    with a datetime.time-object.
+
     Attributes:
         delta:          daytime as datetime.timedelta-instance
         total_seconds:  daytime in seconds as a float
