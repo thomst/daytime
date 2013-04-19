@@ -36,14 +36,13 @@ class DayTime(datetime.time):
             )
 
     @classmethod
-    def strptime(cls, string, format='%H:%M:%S'):
+    def strptime(cls, string, format):
         """
         Build a daytime from a string and a format.
 
         Args:
             string:     string parsed according to the specified format
-            format:     defaults to '%H:%M:%S'.
-                        See the library reference manual for formatting codes.
+            format:     See the library reference manual for formatting codes.
         
         Returns a daytime.
 
@@ -56,7 +55,7 @@ class DayTime(datetime.time):
         Build a local daytime from timestamp.
 
         Args:
-            sec:    a POSIX timestamp, such as is returned by time.time()
+            timestamp:    a POSIX timestamp, such as is returned by time.time()
 
         Returns a daytime.
 
@@ -69,7 +68,7 @@ class DayTime(datetime.time):
         Build a utc-daytime from timestamp.
 
         Args:
-            sec:    a POSIX timestamp, such as is returned by time.time()
+            timestamp:    a POSIX timestamp, such as is returned by time.time()
 
         Returns a daytime.
 
@@ -105,15 +104,16 @@ class DayTime(datetime.time):
     def __add__(self, other, sign=1):
         if isinstance(other, int) or isinstance(other, float):
             seconds = self.as_seconds + sign * other
-            return DayTime.utcfromtimestamp(seconds)
         elif isinstance(other, DayTime):
             seconds = self.as_seconds + sign * other.as_seconds
-            return DayTime.utcfromtimestamp(seconds)
+        elif isinstance(other, datetime.time):
+            seconds = self.as_seconds + sign * DayTime.fromtime(other).as_seconds
         elif isinstance(other, datetime.timedelta):
             seconds = self.as_seconds + sign * other.total_seconds()
-            return DayTime.utcfromtimestamp(seconds)
         else: raise TypeError("unsupported operator for DayTime and {0}".format(
             other.__class__.__name__))
+
+        return DayTime.utcfromtimestamp(seconds)
 
     def __sub__(self, other):
         return self.__add__(other, -1)
