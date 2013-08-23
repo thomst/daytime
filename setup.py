@@ -1,6 +1,7 @@
+import os
 from distutils.core import setup
 
-VERSION = "0.3"
+VERSION = "0.4"
 
 setup(
     name = "daytime", 
@@ -10,7 +11,7 @@ setup(
     url = "https://github.com/thomst/daytime",
     download_url = "https://pypi.python.org/packages/source/d/daytime/daytime-{version}.tar.gz".format(version=VERSION),
     description = 'Extension for datetime.time with the main focus on comarison an making sums.',
-    long_description = "This module extends the datetime.time-module and makes it more handy respectivly to comparison, addition and substraction. You can compare, add and substract a daytime with another daytime, a datetime.time-object or an int or float as total amount of seconds. Making sums is also possible with a datetime.timedelta.",
+    long_description = open('README.rst').read() if os.path.isfile('README.rst') else str(),
     py_modules = ["daytime"],
     classifiers=[
         'Development Status :: 4 - Beta',

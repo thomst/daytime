@@ -1,15 +1,15 @@
 import unittest
 from datetime import datetime
 from datetime import time
-from daytime import DayTime
+from daytime import Daytime
 
 class DayTimeTest(unittest.TestCase):
     def setUp(self):
-        self.daytime1 = DayTime(0, 0, 0, 8000)
-        self.daytime2 = DayTime(2, 20, 22, 7000)
-        self.daytime3 = DayTime(2, 20, 23, 90000)
-        self.daytime4 = DayTime(12, 25, 0, 8400)
-        self.daytime5 = DayTime(18, 43, 20, 6000)
+        self.daytime1 = Daytime(0, 0, 0, 8000)
+        self.daytime2 = Daytime(2, 20, 22, 7000)
+        self.daytime3 = Daytime(2, 20, 23, 90000)
+        self.daytime4 = Daytime(12, 25, 0, 8400)
+        self.daytime5 = Daytime(18, 43, 20, 6000)
 
     def test_comparison(self):
         self.assertTrue(self.daytime1 < self.daytime3 > self.daytime2)
