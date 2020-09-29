@@ -1,12 +1,11 @@
 daytime
-=========
+=======
 
 This module extends the datetime.time-module and makes it more handy
 respectivly to comparison, addition and substraction.
 You can compare, add and substract a daytime with another daytime, a
 datetime.time-object or an int or float as total amount of seconds.
 Making sums is also possible with a datetime.timedelta.
-
 
 
 Latest Version
@@ -49,11 +48,3 @@ Reporting Bugs
 --------------
 Please report bugs at github issue tracker:
 https://github.com/thomst/daytime/issues
-
-
-Author
-------
-thomst <thomaslfuss@gmx.de>
-Thomas Leichtfuß
-
-* http://github.com/thomst
