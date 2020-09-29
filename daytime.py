@@ -49,7 +49,7 @@ class Daytime(datetime.time):
         return cls.fromtime(datetime.datetime.strptime(string, format))
 
     @classmethod
-    def fromtimestamp(cls, timestamp):
+    def fromtimestamp(cls, timestamp, tz=None):
         """
         Build a local daytime from timestamp.
 
@@ -59,7 +59,7 @@ class Daytime(datetime.time):
         Returns a daytime.
 
         """
-        return cls.fromtime(datetime.datetime.fromtimestamp(timestamp))
+        return cls.fromtime(datetime.datetime.fromtimestamp(timestamp, tz))
 
     @classmethod
     def utcfromtimestamp(cls, timestamp):
