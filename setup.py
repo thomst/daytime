@@ -4,15 +4,15 @@ from daytime import VERSION
 
 
 setup(
-    name = "daytime", 
-    version = VERSION, 
-    author = "Thomas Leichtfuss", 
-    author_email = "thomaslfuss@gmx.de",
-    url = "https://github.com/thomst/daytime",
-    download_url = "https://pypi.python.org/packages/source/d/daytime/daytime-{version}.tar.gz".format(version=VERSION),
-    description = 'Extension for datetime.time with the main focus on comarison an making sums.',
-    long_description = open('README.rst').read() if os.path.isfile('README.rst') else str(),
-    py_modules = ["daytime"],
+    name="daytime", 
+    version=VERSION, 
+    author="Thomas Leichtfuss", 
+    author_email="thomaslfuss@gmx.de",
+    url="https://github.com/thomst/daytime",
+    download_url="https://pypi.python.org/packages/source/d/daytime/daytime-{version}.tar.gz".format(version=VERSION),
+    description='Extension for datetime.time with the main focus on comarison an making sums.',
+    long_description=open('README.rst').read() if os.path.isfile('README.rst') else str(),
+    py_modules=["daytime"],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
