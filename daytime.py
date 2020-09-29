@@ -109,8 +109,9 @@ class Daytime(datetime.time):
             seconds = self.as_seconds + sign * Daytime.fromtime(other).as_seconds
         elif isinstance(other, datetime.timedelta):
             seconds = self.as_seconds + sign * other.total_seconds()
-        else: raise TypeError("unsupported operator for Daytime and {0}".format(
-            other.__class__.__name__))
+        else:
+            msg = "unsupported operator for Daytime and {0}"
+            raise TypeError(msg.format(other.__class__.__name__))
 
         return Daytime.utcfromtimestamp(seconds)
 
@@ -120,31 +121,37 @@ class Daytime(datetime.time):
     def __gt__(self, other):
         if isinstance(other, int) or isinstance(other, float):
             return self.as_seconds > other
-        else: return super(Daytime, self).__gt__(other)
+        else:
+            return super(Daytime, self).__gt__(other)
 
     def __ge__(self, other):
         if isinstance(other, int) or isinstance(other, float):
             return self.as_seconds >= other
-        else: return super(Daytime, self).__ge__(other)
+        else:
+            return super(Daytime, self).__ge__(other)
 
     def __lt__(self, other):
         if isinstance(other, int) or isinstance(other, float):
             return self.as_seconds < other
-        else: return super(Daytime, self).__lt__(other)
+        else:
+            return super(Daytime, self).__lt__(other)
 
     def __le__(self, other):
         if isinstance(other, int) or isinstance(other, float):
             return self.as_seconds <= other
-        else: return super(Daytime, self).__le__(other)
+        else:
+            return super(Daytime, self).__le__(other)
 
     def __eq__(self, other):
         if isinstance(other, int) or isinstance(other, float):
             return self.as_seconds == other
-        else: return super(Daytime, self).__eq__(other)
+        else:
+            return super(Daytime, self).__eq__(other)
 
     def __ne__(self, other):
         if isinstance(other, int) or isinstance(other, float):
             return self.as_seconds != other
-        else: return super(Daytime, self).__ne__(other)
+        else:
+            return super(Daytime, self).__ne__(other)
 
 
