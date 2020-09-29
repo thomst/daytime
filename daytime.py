@@ -57,7 +57,8 @@ class Daytime(datetime.time):
         Build a local daytime from timestamp.
 
         Args:
-            timestamp:    a POSIX timestamp, such as is returned by time.time()
+            timestamp:  a POSIX timestamp, such as is returned by time.time()
+            tz:         (optional) instance of a datetime.tzinfo subclass               
 
         Returns a daytime.
 
@@ -104,7 +105,7 @@ class Daytime(datetime.time):
     @property
     def as_seconds(self):
         """
-        Absolute amount of seconds of the daytime.
+        Total amount of seconds of the daytime.
         """
         return self.as_timedelta.total_seconds()
 
