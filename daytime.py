@@ -78,11 +78,16 @@ class Daytime(datetime.time):
         return cls.fromtime(datetime.datetime.utcfromtimestamp(timestamp))
 
     @classmethod
-    def daytime(cls):
+    def daytime(cls, tz=None):
         """
-        Returns the actual daytime.
+        Get the current daytime.
+
+        Args:
+            tz:     (optional) instance of a datetime.tzinfo subclass               
+
+        Returns a daytime.
         """
-        return cls.fromtime(datetime.datetime.today())
+        return cls.fromtime(datetime.datetime.now(tz))
 
     @property
     def as_timedelta(self):
