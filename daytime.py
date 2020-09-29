@@ -2,6 +2,9 @@ import time
 import datetime
 
 
+VERSION = "0.5"
+
+
 class Daytime(datetime.time):
     """
     Compare, add or substract daytimes.

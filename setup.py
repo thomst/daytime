@@ -1,7 +1,7 @@
 import os
 from distutils.core import setup
+from daytime import VERSION
 
-VERSION = "0.4"
 
 setup(
     name = "daytime", 
